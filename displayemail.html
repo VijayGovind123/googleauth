@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai&family=Archivo&family=Caveat&family=IBM+Plex+Sans&family=Kalam&family=Kaushan+Script&family=Mali&family=Shalimar&family=Shojumaru&family=Space+Grotesk&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style type="text/css">
+        body {
+          font-family: 'Space grotesk',sans-serif;
+          background: url("sea.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          text-align: center;
+
+
+        }
+
+
+        .main{
+          font-size: large;
+          border-radius: 10px;
+          width: 50%;
+          margin: auto;
+          margin-top: 170px;
+          height: 45vh;
+          display: flex;
+          flex-direction: column;
+         text-align: center;
+
+         justify-content:center;
+         align-items: center;
+         backdrop-filter:blur(15px);
+        }
+        #btn{
+           width: 30%;
+           height: 5vh;
+           border-radius: 10px;
+           background-color: blue;
+           color: white;
+           border:none;
+           font-size: inherit;
+           font-weight: bold;
+           font-family: inherit;
+
+        }
+        @media(max-width:600px){
+          .main{
+            width:100%;
+          }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+
+      <div id="image">
+
+
+      </div>
+      <p id="temp"></p>
+      <button onclick="window.location.href='/logout';" id= "btn">Log Out</button>
+
+    </div>
+
+
+    <script>
+        $.ajax({
+            url: "/getData", success: function(result){
+                var userData = JSON.parse(result);
+                $("#image").prepend(`
+                    <img src="${userData.profile}">
+
+                `);
+                $("#temp").prepend(`
+
+
+                    <p>Welcome ${userData.name}</p>
+                    <p>Email : ${userData.email}</p>
+
+
+
+                `);
+              /*  $("#temp").prepend(`
+                    <img src="${userData.profile}">
+                    <h1>Welcome ${userData.email}</h1>
+                    <h1>Welcome ${userData.name}</h1>
+
+
+                    <a href="/logout">log out</a>
+                `)*/
+              //  document.getElementById("temp").innerHTML=${userData.email};
+            //  $("#temp").val(${userData.email})
+            }
+        });
+    </script>
+</body>
+</html>

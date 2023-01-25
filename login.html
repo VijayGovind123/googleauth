@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai&family=Archivo&family=Caveat&family=IBM+Plex+Sans&family=Kalam&family=Kaushan+Script&family=Mali&family=Shalimar&family=Shojumaru&family=Space+Grotesk&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            font-family: 'Space grotesk',sans-serif;
+            background-image: url("sea.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+
+        }
+
+        .form{
+             border-radius: 10px;
+             width: 50%;
+             margin: auto;
+             margin-top: 170px;
+             height: 45vh;
+             display: flex;
+             flex-direction: column;
+            text-align: center;
+
+            justify-content:center;
+            align-items: center;
+            backdrop-filter:blur(15px);
+        }
+        .form button{
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 2.2vh;
+            width: 40%;
+            height:6vh;
+            font-weight: bold;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+
+
+        }
+
+    @media(max-width:600px) {
+        .form{
+            width: 100%;
+
+        }
+        
+
+    }
+    </style>
+</head>
+<body>
+
+    <div class="form">
+        <h1>Welcome</h1>
+        <button onclick="window.location.href='/google';">Sign Up with Google</button>
+    </div>
+</body>
+</html>
